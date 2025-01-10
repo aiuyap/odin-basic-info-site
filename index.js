@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import url from "url";
 
-const PORT = process.env.PORT;
+const PORT = 8080;
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
