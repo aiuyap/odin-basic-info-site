@@ -19,18 +19,26 @@ const server = http.createServer(async (request, response) => {
         filePath = path.join(__dirname, "public", "contact-me.html");
       } else {
         filePath = path.join(__dirname, "public", "404.html");
+        response.statusCode = 400;
+      }
+
+      if (request.url === "/style.css") {
+        response.writeHead(200, { "Content-Type": "text/css" });
+        filePath = path.join(__dirname, "public", "style.css");
+      } else {
+        response.setHeader("Content-Type", "text/html");
       }
 
       const data = await fs.readFile(filePath);
-      response.setHeader("Content-Type", "text/html");
+
       response.write(data);
       response.end();
     } else {
       throw new Error("Method request not allowed");
     }
   } catch (error) {
-    res.writeHead(500, { "Content-Type": "text/plain" });
-    res.end("Server Error");
+    response.writeHead(500, { "Content-Type": "text/plain" });
+    response.end("Server Error");
   }
 });
 

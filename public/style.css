@@ -1,0 +1,34 @@
+:root {
+  background-color: #1d1616;
+  color: #eeeeee;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: #d84040;
+}
+
+p {
+  text-align: center;
+}
+
+.home-page-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
